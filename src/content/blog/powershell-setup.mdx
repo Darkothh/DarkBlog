@@ -1,0 +1,54 @@
+---
+title: Configurando la powershell para web develop
+summary: Hoy veremos como instalar la última versión de powershell ademas de como mejorarla
+date: '2024-02-11'
+draft: false
+tags: [powershell, windows]
+---
+
+Bienvenidos a mi blog, hoy veremos como instalar y configurar neovim desde cero usando Lazyvim y scoop
+
+## Instalando neovim
+
+### Instalación de [scoop](https://scoop.sh/)
+
+Empezaremos abriendo una consola de Powershell y ejecutamos los siguientes comandos:
+```powershell
+Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser #Este comando nos permite ejecutar scripts no firmados desde consola
+Invoke-RestMethod -Uri https://get.scoop.sh | Invoke-Expression # Instala y agrega scoop al $PATH
+```
+Seguramente les pregunte si desean permitir la ejecución de scripts desde la consola, acepten y continuan con la instalación de manera normal
+Una vez instalado cierren y abran una nueva terminal para actualizar el $PATH
+
+### Instalación de neovim
+
+Ahora ejecutamos el siguiente comando
+
+Esto nos descargara neovim junto con todos los paquetes necesarios para su funcionamiento
+```powershell
+scoop install neovim nodejs ripgrep mingw make fzf
+```
+
+## Instalación de lazyvim
+
+Primero hacemos backup de la configuración de neovim si es que ya existe
+
+```powershell
+# Obligatorio
+Move-Item $env:LOCALAPPDATA\nvim $env:LOCALAPPDATA\nvim.bak
+
+# Opcional
+Move-Item $env:LOCALAPPDATA\nvim-data $env:LOCALAPPDATA\nvim-data.bak
+```
+
+Puedes instalar Lazyvim desde su repositorio de GitHub:
+
+```powershell
+git clone https://github.com/LazyVim/starter $env:LOCALAPPDATA\nvim
+```
+
+O si prefieres instalarlo usando mi configuración personal:
+
+```powershell
+git clone httos://github.com/troublec0re/nvim $env:LOCALAPPDATA\nvim
+```

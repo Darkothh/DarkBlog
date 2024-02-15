@@ -1,0 +1,31 @@
+---
+title: Exploring ChatGPT Capabilities
+summary: Dive into the diverse capabilities of ChatGPT and learn how to leverage them in your projects.
+date: '2024-02-11'
+related:
+    - sample-post
+draft: false
+---
+
+Bienvenidos a mi blog, hoy veremos como instalar y configurar neovim desde cero usando Lazyvim y scoop
+
+## Instalando neovim
+
+### Instalación de [scoop](https://scoop.sh/)
+
+Empezaremos abriendo una consola de Powershell y ejecutamos los siguientes comandos:
+```powershell
+Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser #Este comando nos permite ejecutar scripts no firmados desde consola
+Invoke-RestMethod -Uri https://get.scoop.sh | Invoke-Expression # Instala y agrega scoop al $PATH
+```
+Seguramente les pregunte si desean permitir la ejecución de scripts desde la consola, acepten y continuan con la instalación de manera normal
+Una vez instalado cierren y abran una nueva terminal para actualizar el $PATH
+
+### Instalación de neovim
+
+Ahora ejecutamos
+
+```powershell
+scoop install neovim nodejs ripgrep mingw make fzf
+```
+
