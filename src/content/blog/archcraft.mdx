@@ -1,0 +1,17 @@
+---
+title: Utils for ArchCraft
+summary: How change default browser in bspwm
+date: '02/15/2024'
+draft: false
+tags: [linux]
+---
+
+# How change default browser in bspwm
+
+First we need see if `xdg-settings` return a default browser
+
+```bash
+xdg-settings get default-web-browser
+# Expected retur:
+# *.desktop (firefox, chrome, chomium, etc, etc)
+```
